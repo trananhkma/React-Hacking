@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import PropsState from './containers/App/App';
+import BaiTapDay2 from './containers/App/App';
 import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 ReactDOM.render(
   <React.StrictMode>
-    <PropsState />
+    <BaiTapDay2 />
   </React.StrictMode>,
   document.getElementById('root')
 );

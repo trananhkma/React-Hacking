@@ -35,6 +35,12 @@ function BaiTapDay2() {
     </div>
   )
 
+  const ButtonIcon = props => (
+    <button type="button" class="btn btn-sm icon">
+      <FontAwesomeIcon icon={props.icon}/>
+    </button>
+  )
+
   const Item = props => (
     <div class="row bor-bottom">
       <div class="col-1">
@@ -51,18 +57,9 @@ function BaiTapDay2() {
         <span class="time">{props.time}</span>
       </div>
       <div class="col">
-        <button type="button" class="btn btn-sm icon">
-          <FontAwesomeIcon icon={faMicrophone}/>
-        </button>
-        <button type="button" class="btn btn-sm icon">
-          <FontAwesomeIcon icon={faHeart}/>
-        </button> 
-        <button type="button" class="btn btn-sm icon">
-          <FontAwesomeIcon icon={faEllipsisH}/>
-        </button>
-        <button type="button" class="btn btn-sm icon">
-          <i class="fa fa-heart"/>
-        </button>
+        <ButtonIcon icon={faMicrophone}/>
+        <ButtonIcon icon={faHeart}/>
+        <ButtonIcon icon={faEllipsisH}/>
       </div>
     </div>
   )

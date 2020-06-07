@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './day2.css';
 import { faMicrophone, faHeart, faEllipsisH } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 

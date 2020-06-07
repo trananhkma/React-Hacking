@@ -47,7 +47,7 @@ function BaiTapDay2() {
         <div class="title">{props.title}</div>
         <div class="artist">{props.artist}</div>
       </div>
-      <div class="col-3">
+      <div class="col-4">
         <span class="time">{props.time}</span>
       </div>
       <div class="col">

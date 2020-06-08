@@ -36,33 +36,48 @@ function BaiTapDay2() {
   )
 
   const ButtonIcon = props => (
-    <button type="button" class="btn btn-sm icon">
+    <button type="button" class="btn btn-sm icon" onClick={() => props.onClick()}>
       <FontAwesomeIcon icon={props.icon}/>
     </button>
   )
 
-  const Item = props => (
-    <div class="row bor-bottom">
-      <div class="col-1">
-        <span class="order" style={props.color||{color:"white"}}>{props.order}</span>
+  const Item = props => {
+    const [openMenu, setOpenMenu] = React.useState(false);
+
+    return (
+      <div class="row bor-bottom">
+        <div class="col-1">
+          <span class="order" style={props.color||{color:"white"}}>{props.order}</span>
+        </div>
+        <div class="col-1">
+          <img class="thumb pull-left" src={props.src} />
+        </div>
+        <div class="col-5">
+          <div class="title">{props.title}</div>
+          <div class="artist">{props.artist}</div>
+        </div>
+        <div class="col-4">
+          <span class="time">{props.time}</span>
+        </div>
+        <div class="col">
+          <ButtonIcon icon={faMicrophone}/>
+          <ButtonIcon icon={faHeart}/>
+          <ButtonIcon icon={faEllipsisH} onClick={() => setOpenMenu(!openMenu)}/>
+        </div>
+        { openMenu &&
+          <div class="dropdown">
+            <div class="dropdown-content">
+              <a href="#">Thêm vào danh sách phát</a>
+              <a href="#">Phát tiếp theo</a>
+              <a href="#">Thêm vào playlist</a>
+              <a href="#">Bình luận</a>
+              <a href="#">Đóng góp lời bài hát</a>
+            </div>
+          </div>
+        }
       </div>
-      <div class="col-1">
-        <img class="thumb pull-left" src={props.src} />
-      </div>
-      <div class="col-5">
-        <div class="title">{props.title}</div>
-        <div class="artist">{props.artist}</div>
-      </div>
-      <div class="col-4">
-        <span class="time">{props.time}</span>
-      </div>
-      <div class="col">
-        <ButtonIcon icon={faMicrophone}/>
-        <ButtonIcon icon={faHeart}/>
-        <ButtonIcon icon={faEllipsisH}/>
-      </div>
-    </div>
-  )
+    )
+  }
 
   return(
     <Container>

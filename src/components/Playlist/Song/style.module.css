@@ -1,0 +1,20 @@
+.item {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.item:hover {
+  background-color: #2b1b39 !important;
+}
+
+
+.borBottom {
+  border-bottom: 1px solid rgba(255,255,255,.06) !important;
+}
+
+.col-1 {
+  padding: 0 !important;
+  max-width: 4.3333333% !important;
+}

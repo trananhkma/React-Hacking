@@ -1,0 +1,29 @@
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdownContent {
+  display: block;
+  position: absolute;
+  background-color: #231f3b;
+  min-width: 160px;
+  z-index: 1;
+}
+
+.dropdownContent a {
+  margin-left: -50px;
+  font-size: 14px;
+  background-color: inherit;
+  font-weight: 400;
+  color: #fff;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdownContent a:hover {
+  background-color: #534769;
+  color: #fff;
+  text-decoration: none;
+}

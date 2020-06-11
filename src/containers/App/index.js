@@ -11,6 +11,7 @@ function App() {
         <h1>React Hacking</h1>
         <img src={logo} className="App-logo" alt="logo" />
         <NavLink className="App-link" to="/ps">Homework 1: PropsState</NavLink>
+        <NavLink className="App-link" to="/day4">Day 4: Call API</NavLink>
       </header>
     </div>
   );

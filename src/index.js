@@ -6,6 +6,7 @@ import PropsState from './containers/PropsState';
 import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {HashRouter,Route} from 'react-router-dom';
+import Axios from './containers/Axios';
 
 
 ReactDOM.render(
@@ -13,6 +14,7 @@ ReactDOM.render(
     <HashRouter>
       <Route exact path="/" component={App} />
       <Route exact path="/ps" component={PropsState} />
+      <Route exact path="/day4" component={Axios} />
     </HashRouter>
   ), document.getElementById('root')
 )

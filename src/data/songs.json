@@ -2,7 +2,7 @@
   "songs": [
     {
       "order": "1",
-      "color": "{{color:'blue'}}",
+      "color": {"color": "blue"},
       "title": "Chỉ Cần Anh Giả Vờ",
       "artist": "Chi Dân",
       "time": "04:15",
@@ -10,7 +10,7 @@
     },
     {
       "order": "2",
-      "color": "{{color:'green'}}",
+      "color": {"color": "green"},
       "title": "Cướp Đi Cả Thế Giới",
       "artist": "Bảo Yến Rosie",
       "time": "05:07",
@@ -18,7 +18,7 @@
     },
     {
       "order": "3",
-      "color": "{{color:'red'}}",
+      "color": {"color": "red"},
       "title": "Khóc Giữa Trời Mưa",
       "artist": "Cao Thái Sơn",
       "time": "05:50",

@@ -7,30 +7,30 @@ import {faMicrophone, faHeart, faEllipsisH} from '@fortawesome/free-solid-svg-ic
 
 import ButtonIcon from './Button'
 import Menu from './Menu'
-import {Order, Thumbnail, Title, Artist, Timer} from './Info'
 
 
-const Song = () => {
+const Song = props => {
   const [openMenu, setOpenMenu] = React.useState(false);
-  const BtnMicrophone = () => (
-    <ButtonIcon icon={faMicrophone} onClick={() => setOpenMenu(false)} onBlur={() => setOpenMenu(false)}/>
-  )
-  
-  const BtnHeart = () => (
-    <ButtonIcon icon={faHeart} onClick={() => setOpenMenu(false)} onBlur={() => setOpenMenu(false)}/>
-  )
-  
-  const BtnMenu = () => (
-    <ButtonIcon icon={faEllipsisH} onClick={() => setOpenMenu(!openMenu)} onBlur={() => setOpenMenu(false)}/>
-  )
-
   return (
     <Row className={`${styles.borBottom} ${styles.item}`}>
-      <Col xs='1'><Order/></Col>
-      <Col xs='1'><Thumbnail/></Col>
-      <Col xs='4'><Title/><Artist/></Col>
-      <Col xs='4'><Timer/></Col>
-      <Col><BtnMicrophone/><BtnHeart/><BtnMenu/></Col>
+      <Col xs='1'>
+        <span className={styles.order} style={props.color||{color:"white"}}>{props.order}</span>
+      </Col>
+      <Col xs='1'>
+        <img className={`${styles.thumb} pull-left`} src={props.src} />
+      </Col>
+      <Col xs='4'>
+        <div className={styles.title}>{props.title}</div>
+        <div className={styles.artist}>{props.artist}</div>
+      </Col>
+      <Col xs='4'>
+       <span className={styles.timer}>{props.timer}</span>
+      </Col>
+      <Col>
+        <ButtonIcon icon={faMicrophone} onClick={() => setOpenMenu(false)} onBlur={() => setOpenMenu(false)}/>
+        <ButtonIcon icon={faHeart} onClick={() => setOpenMenu(false)} onBlur={() => setOpenMenu(false)}/>
+        <ButtonIcon icon={faEllipsisH} onClick={() => setOpenMenu(!openMenu)} onBlur={() => setOpenMenu(false)}/>
+      </Col>
       {openMenu && <Menu/>}
     </Row>
   )

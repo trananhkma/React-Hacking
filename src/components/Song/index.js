@@ -5,8 +5,8 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import {faMicrophone, faHeart, faEllipsisH} from '@fortawesome/free-solid-svg-icons';
 
-import ButtonIcon from './Button'
-import Menu from './Menu'
+import ButtonIcon from '../Button'
+import Menu from '../Menu'
 
 
 const Song = props => {

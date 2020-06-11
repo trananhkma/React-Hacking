@@ -8,7 +8,7 @@ import {JsonPlaceHolder} from "../../request"
 const PostList = () => {
   const [state, setState] = React.useState([]);
   useEffect(() => {
-    JsonPlaceHolder.get().then(data => setState(data.data))
+    JsonPlaceHolder.get().then(response => setState(response.data))
   });
 
   return(

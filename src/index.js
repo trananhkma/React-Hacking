@@ -13,8 +13,8 @@ ReactDOM.render(
   (
     <HashRouter>
       <Route exact path="/" component={App} />
-      <Route exact path="/ps" component={PropsState} />
-      <Route exact path="/day4" component={Axios} />
+      <Route exact path="/hack1" component={PropsState} />
+      <Route exact path="/hack2" component={Axios} />
     </HashRouter>
   ), document.getElementById('root')
 )

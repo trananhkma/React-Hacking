@@ -9,7 +9,6 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>React Hacking</h1>
-        <img src={logo} className="App-logo" alt="logo" />
         <div class="pull-left">
           <NavLink className="App-link row" to="/hack1">Homework 1: PropsState</NavLink>
           <NavLink className="App-link row" to="/hack2">Homework 2: Call API with Axios</NavLink>

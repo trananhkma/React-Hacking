@@ -4,7 +4,7 @@ import axios from 'axios';
 const mainInstance = axios.create({
   baseURL: 'https://jsonplaceholder.typicode.com/',
   timeout: 10000,
-  headers: {'X-Custom-Header': 'foobar'},
+  // headers: {'X-Custom-Header': 'foobar'},
 });
 
 mainInstance.interceptors.response.use(function (response) {

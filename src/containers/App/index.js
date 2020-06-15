@@ -7,6 +7,9 @@ import { NavLink } from "react-router-dom";
 function App() {
   return (
     <div className="App">
+      <div class="flier">
+        <img src={logo} class="App-logo" alt="logo" />
+      </div>
       <header className="App-header">
         <h1>React Hacking</h1>
         <div class="pull-left">

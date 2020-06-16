@@ -10,17 +10,18 @@ const mainInstance = axios.create({
 mainInstance.interceptors.response.use(function (response) {
   // Any status code that lie within the range of 2xx cause this function to trigger
   // Do something with response data
-  const newResponse = {...response, data: [{id:'0', userId: '10', title: 'Yolo', body: 'Xyz'}, ...response.data] }
-  return newResponse;
+  // const newResponse = {...response, data: [{id:'0', userId: '10', title: 'Yolo', body: 'Xyz'}, ...response.data] }
+  // return newResponse;
+  return response
 }, function (error) {
   // Any status codes that falls outside the range of 2xx cause this function to trigger
   // Do something with response error
   return Promise.reject(error);
 });
 
-export function getPosts() {
+export function getPost(id) {
   return mainInstance({
-    url: '/posts',
+    url: `/posts/${id}`,
     method: 'get'
   });
 };
@@ -32,5 +33,3 @@ export function deletePost(postNumber = 1) {
     method: 'delete',
   });
 }
-
-

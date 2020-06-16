@@ -5,19 +5,22 @@ import App from './containers/App';
 import PropsState from './containers/PropsState';
 import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {HashRouter,Route} from 'react-router-dom';
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import Axios from './containers/Axios';
 import Hover from './containers/Hover';
 
 
 ReactDOM.render(
   (
-    <HashRouter>
-      <Route exact path="/" component={App} />
-      <Route exact path="/hack1" component={PropsState} />
-      <Route exact path="/hack2" component={Axios} />
-      <Route exact path="/hack3" component={Hover} />
-    </HashRouter>
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/" component={App} />
+        <Route path="/hack1" component={PropsState} />
+        <Route exact path="/hack2" component={Axios} />
+        <Route path="/hack2/:index" component={Axios} />
+        <Route path="/hack3" component={Hover} />
+      </Switch>
+    </BrowserRouter>
   ), document.getElementById('root')
 )
 

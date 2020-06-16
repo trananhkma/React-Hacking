@@ -2,6 +2,7 @@ import React from 'react'
 import styles from './style.module.css'
 import Button from 'react-bootstrap/Button'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { NavLink } from "react-router-dom";
 
 
 const ButtonIcon = props => (
@@ -27,5 +28,9 @@ export const TrollButton = () => {
     >ĐÉO</Button>
   )
 }
+
+export const Home = () => (
+  <NavLink className="btn btn-link" to="/">Home</NavLink>
+)
 
 export default ButtonIcon

@@ -1,0 +1,23 @@
+.smile {
+  display: block;
+  margin: auto;
+  width: 30%;
+  margin-bottom: 20px;
+}
+
+html, body {
+  height: 100%;
+}
+
+.question {
+  font-weight: bold;
+  color: orange;
+}
+
+.bg {
+  background-image: url("./520_love.jpg");
+  height: 800px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

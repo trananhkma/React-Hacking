@@ -21,8 +21,8 @@ export const TrollButton = () => {
       onMouseEnter={() => setPosition(
         {
           position: "absolute",
-          top: Math.floor(Math.random() * 750) + "px",
-          left: Math.floor(Math.random() * 1500) + "px"
+          top: Math.floor(Math.random() * 600) + "px",
+          left: Math.floor(Math.random() * 1200) + "px"
         }
       )}
     >ĐÉO</Button>

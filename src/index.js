@@ -7,6 +7,7 @@ import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {HashRouter,Route} from 'react-router-dom';
 import Axios from './containers/Axios';
+import Hover from './containers/Hover';
 
 
 ReactDOM.render(
@@ -15,6 +16,7 @@ ReactDOM.render(
       <Route exact path="/" component={App} />
       <Route exact path="/hack1" component={PropsState} />
       <Route exact path="/hack2" component={Axios} />
+      <Route exact path="/hack3" component={Hover} />
     </HashRouter>
   ), document.getElementById('root')
 )

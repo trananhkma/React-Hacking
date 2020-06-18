@@ -11,7 +11,7 @@ const PostList = props => {
   
   useEffect(() => {
     getPost(index || "").then(response => setState(response.data))
-  }, [state]);
+  }, [index]);
 
   return(
     <Table striped bordered hover variant="dark">

@@ -1,95 +1,99 @@
 .App {
-    text-align: center;
-  }
-  
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    height: 40vmin;
-    pointer-events: none;
+    animation: App-logo-spin infinite 50s linear;
   }
-  
-  @media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-      animation: App-logo-spin infinite 50s linear;
-    }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
   }
-  
-  .App-header {
-    background-color: #282c34;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+  to {
+    transform: rotate(360deg);
   }
-  
-  .App-link {
-    color: #61dafb;
+}
+
+.flier {
+  pointer-events: none;
+}
+
+.flier > * {
+/* Adjust animation duration to change the element’s speed */
+        animation: fly 50s linear infinite;
+        pointer-events: none !important;
+  top: 0;
+  left: 0;
+  transform: translateX(-120%) translateY(-120%) rotateZ(0);
+  position: fixed;
+  animation-delay: 0s;
+  z-index: 999999;
+}
+
+  /* Keyframe values control where the element will begin
+    and end its trajectory across the screen. Each rule
+    represents a path the element follows across the screen. */
+
+
+@keyframes fly {
+
+  98.001%, 0% {
+                display: block;
+    transform: translateX(-200%) translateY(100vh) rotateZ(0deg)
   }
-  
-  @keyframes App-logo-spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
+
+  15% {
+    transform: translateX(100vw) translateY(-100%) rotateZ(180deg)
   }
-  
-  .flier {
-    pointer-events: none;
+
+  15.001%, 18% {
+    transform: translateX(100vw) translateY(-30%) rotateZ(0deg)
   }
-  
-  .flier > * {
-  /* Adjust animation duration to change the element’s speed */
-          animation: fly 50s linear infinite;
-          pointer-events: none !important;
-    top: 0;
-    left: 0;
-    transform: translateX(-120%) translateY(-120%) rotateZ(0);
-    position: fixed;
-    animation-delay: 0s;
-    z-index: 999999;
+
+  40% {
+    transform: translateX(-200%) translateY(3vh) rotateZ(-180deg)
   }
-  
-   /* Keyframe values control where the element will begin
-      and end its trajectory across the screen. Each rule
-      represents a path the element follows across the screen. */
-  
-  
-  @keyframes fly {
-  
-    98.001%, 0% {
-                  display: block;
-      transform: translateX(-200%) translateY(100vh) rotateZ(0deg)
-    }
-  
-    15% {
-      transform: translateX(100vw) translateY(-100%) rotateZ(180deg)
-    }
-  
-    15.001%, 18% {
-      transform: translateX(100vw) translateY(-30%) rotateZ(0deg)
-    }
-  
-    40% {
-      transform: translateX(-200%) translateY(3vh) rotateZ(-180deg)
-    }
-  
-    40.001%, 43% {
-      transform: translateX(-200%) translateY(-100%) rotateZ(-180deg)
-    }
-  
-    65% {
-      transform: translateX(100vw) translateY(50vh) rotateZ(0deg)
-    }
-  
-    65.001%, 68% {
-      transform: translateX(20vw) translateY(-200%) rotateZ(180deg)
-    }
-  
-    95% {
-      transform: translateX(10vw) translateY(100vh) rotateZ(0deg)
-    }
+
+  40.001%, 43% {
+    transform: translateX(-200%) translateY(-100%) rotateZ(-180deg)
   }
+
+  65% {
+    transform: translateX(100vw) translateY(50vh) rotateZ(0deg)
+  }
+
+  65.001%, 68% {
+    transform: translateX(20vw) translateY(-200%) rotateZ(180deg)
+  }
+
+  95% {
+    transform: translateX(10vw) translateY(100vh) rotateZ(0deg)
+  }
+}
+
+.activeX {
+  color:red
+}

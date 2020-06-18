@@ -16,10 +16,10 @@ ReactDOM.render(
     <BrowserRouter>
       <Switch>
         <Route exact path="/" component={App} />
-        <Route path="/hack1" component={PropsState} />
+        <Route exact path="/hack1" component={PropsState} />
         <Route exact path="/hack2" component={Axios} />
-        <Route path="/hack2/:index" component={Axios} />
-        <Route path="/hack3" component={Hover} />
+        <Route exact path="/hack2/:index" component={Axios} />
+        <Route exact path="/hack3" component={Hover} />
         <Route component={NotFoundPage} />
       </Switch>
     </BrowserRouter>

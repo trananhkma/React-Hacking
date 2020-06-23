@@ -17,7 +17,7 @@ const Song = props => {
         <span className={styles.order} style={props.color||{color:"white"}}>{props.order}</span>
       </Col>
       <Col xs='1'>
-        <img className={`${styles.thumb} pull-left`} src={props.src} />
+        <img className={`${styles.thumb} pull-left`} src={props.src} alt="thumb"/>
       </Col>
       <Col xs='4'>
         <div className={styles.title}>{props.title}</div>

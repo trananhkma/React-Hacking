@@ -12,6 +12,7 @@ const Item = props => {
       <td>{props.userId}</td>
       <td>{props.title}</td>
       <td>{props.body}</td>
+      <td><button className="btn btn-danger" onClick={() => props.removeItem(props)}>Remove</button></td>
     </tr>
   )
 }
@@ -36,12 +37,13 @@ const Redux = props => {
           <th>UserID</th>
           <th>Title</th>
           <th>Body</th>
+          <th>Action</th>
         </tr>
       </thead>
       <tbody>
-      {props.selected &&
+      {
         props.selected.map((item)=>
-          <Item key={item.id} {...item}/>
+          <Item key={item.id} {...item} removeItem={props.removeItem}/>
         )
       }
       </tbody>
@@ -67,7 +69,18 @@ const mapDispatch = dispatch => ({
       title: data.title,
       body: data.body
     }
+  }),
+  removeItem: data => dispatch({
+    type: "REMOVE",
+    item: {
+      id: data.id,
+      userId: data.userId,
+      title: data.title,
+      body: data.body
+    }
   })
+
+
 })
 
 export default connect(mapState, mapDispatch)(Redux)

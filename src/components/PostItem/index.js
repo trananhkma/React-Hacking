@@ -8,6 +8,7 @@ const Item = props => {
       <td>{props.userId}</td>
       <td>{props.title}</td>
       <td>{props.body}</td>
+      <td><button className="btn btn-danger" onClick={() => props.deleteData(props.id)}>Delete</button></td>
     </tr>
   )
 }

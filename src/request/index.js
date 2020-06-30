@@ -3,6 +3,7 @@ import axios from 'axios';
 
 const mainInstance = axios.create({
   baseURL: 'https://jsonplaceholder.typicode.com/',
+  // baseURL: 'http://localhost:5000/',
   timeout: 10000,
   // headers: {'X-Custom-Header': 'foobar'},
 });

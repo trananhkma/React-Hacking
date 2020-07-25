@@ -1,15 +1,19 @@
+import actionType from '../actions'
+
+
 const InitState = {items: []}
+const {SELECT, REMOVE} = actionType
 
 export default function checkout(state=InitState, action) {
   switch (action.type) {
-    case 'SELECT':
+    case SELECT:
       return {
         items: [
           ...state.items,
           action.item
         ]
       }
-    case 'REMOVE':
+    case REMOVE:
       const index = getIndex(action.item.id, state.items, 'id')
       state.items.splice(index, 1)
       return {items: [...state.items]}

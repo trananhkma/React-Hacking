@@ -1,35 +1,26 @@
-import axios from 'axios';
+import axios from 'axios'
+import { METHODS, mainPath } from './const'
 
+
+const {get, post, put, del} = METHODS
+const {posts, todo} = mainPath
 
 const mainInstance = axios.create({
-  // baseURL: 'https://jsonplaceholder.typicode.com/',
-  baseURL: 'http://localhost:5000/',
-  timeout: 10000,
-  // headers: {'X-Custom-Header': 'foobar'},
-});
+  baseURL: 'http://localhost:6969/',
+})
 
-mainInstance.interceptors.response.use(function (response) {
-  // Any status code that lie within the range of 2xx cause this function to trigger
-  // Do something with response data
-  // const newResponse = {...response, data: [{id:'0', userId: '10', title: 'Yolo', body: 'Xyz'}, ...response.data] }
-  // return newResponse;
-  return response
-}, function (error) {
-  // Any status codes that falls outside the range of 2xx cause this function to trigger
-  // Do something with response error
-  return Promise.reject(error);
-});
 
-export function getPost(id) {
-  return mainInstance({
-    url: `/posts/${id}`,
-    method: 'get'
-  });
-};
+// Posts APIs
+const getPost = id => mainInstance({url: posts+id, method: get})
+const deletePost = id => mainInstance({url: posts+id, method: del})
 
-export function deletePost(id) {
-  return mainInstance({
-    url: `/posts/${id}`,
-    method: 'delete'
-  });
-};
+// Todo APIs
+const getTodo = () => mainInstance({url: todo, method: get})
+const addTodo = data => mainInstance({url: todo, method: post, data: data})
+const editTodo = (id,params) => mainInstance({url: todo+id, method: put, params: params})
+const deleteTodo = id => mainInstance({url: todo+id, method: del})
+
+export {
+  getPost, deletePost,
+  getTodo, addTodo, editTodo, deleteTodo,
+}

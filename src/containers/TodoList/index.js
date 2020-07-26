@@ -13,8 +13,11 @@ import {Home} from '../../components/Button'
 
 const AddTask = (props) => {
   function handleSubmit() {
-    props.dispatch({type: TYPE.ADD_TASK_REQUESTING, task: props.task})
-    console.log(props.task)
+    if (props.task) {
+      props.dispatch({type: TYPE.ADD_TASK_REQUESTING, task: props.task})
+      props.setAdding(false)
+      props.setTask("")
+    }
   }
 
   return(
@@ -56,9 +59,9 @@ export default function Todo() {
   }, [])
 
   function removeTask(taskID) {
-    dispatch({type: TYPE.DELETE_TASK_REQUESTING})
+    dispatch({type: TYPE.DELETE_TASK_REQUESTING, taskID: taskID})
+    setAdding(false)
   }
-
   return (
     <div className={styles.bgColor}>
       <Container>
@@ -70,9 +73,9 @@ export default function Todo() {
         <>
           { 
             tasks.map((task) => 
-              <InputGroup>
+              <InputGroup key={task.id}>
                 <InputGroup.Prepend>
-                  <InputGroup.Checkbox className={styles.bigCb} onSelect={() => removeTask(task.id)}/>
+                  <InputGroup.Checkbox className={styles.bigCb} onClick={() => removeTask(task.id)}/>
                 </InputGroup.Prepend>
                 <Form.Control className={styles.noBg} value={task.des} disabled/>
               </InputGroup>

@@ -20,6 +20,11 @@ const AddTask = (props) => {
     }
   }
 
+  function handleCancel() {
+    props.setAdding(false)
+    props.setHover(false)
+  }
+
   return(
     <div style={{marginTop:"20px"}}>
       {!props.adding ? (
@@ -37,8 +42,8 @@ const AddTask = (props) => {
               onChange={e => props.setTask(e.target.value)}  
             />
           </Form.Group>
-          <Button variant="danger" type="button" onClick={() => handleSubmit()}>Add Task</Button>
-          <Button variant="link" onClick={() => props.setAdding(false)}>Cancel</Button>
+          <Button variant="danger" type="button" onClick={handleSubmit}>Add Task</Button>
+          <Button variant="link" onClick={handleCancel}>Cancel</Button>
         </Form>
       )}
     </div>
